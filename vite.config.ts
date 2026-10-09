@@ -3,5 +3,5 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/STUDY_react_lightout/",
+  base: "/STUDY_react_lighout/",
 });
