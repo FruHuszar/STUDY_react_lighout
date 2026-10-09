@@ -1,0 +1,85 @@
+:root {
+  --szin-hatter: #1e1e2e;
+  --szin-betu: #eee;
+  --szin-arnyek: #555;
+  --szin-lampa-be: #ffd84d;
+  --szin-lampa-ki: #333;
+  --szin-nyert: #286811;
+  --tabla-meret: 5;
+}
+
+body {
+  margin: 0;
+  background: var(--szin-hatter);
+  color: var(--szin-betu);
+  text-align: center;
+}
+
+.jatek {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.jatekter {
+  display: grid;
+  grid-template-columns: repeat(var(--tabla-meret), 60px);
+  gap: 10px;
+}
+
+.lampa {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--szin-arnyek);
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.lampa.ki {
+  background: var(--szin-lampa-ki);
+}
+
+.lampa.be {
+  background: var(--szin-lampa-be);
+  box-shadow: 0 0 5px var(--szin-lampa-be);
+}
+
+.jatekter.vege .lampa {
+  cursor: default;
+}
+
+.nyert-hatter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nyert {
+  position: static; /*fogalmam sincs miért de enélkül nem működik középre*/
+  margin: 0;
+  color: var(--szin-nyert);
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.uj-jatek {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
